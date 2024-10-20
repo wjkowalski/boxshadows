@@ -8,9 +8,10 @@ let softShadow = document.getElementById('soft');
 let longShadow = document.getElementById('long');
 let boxy = document.getElementById('boxy');
 let output = document.getElementById('output');
-let curled = document.getElementById('curled');
 let gradient = document.getElementById('gradient');
+let distant = document.getElementById('distant');
 
+distant.addEventListener('click', showDistantShadow);
 layerShadow.addEventListener('click', showLayerShadow);
 insetShadow.addEventListener('click', showInsetShadow);
 neonGlow.addEventListener('click', showNeonGlow);
@@ -107,3 +108,10 @@ function showGradientShadow(){
   &nbsp;&nbsp;&nbsp;&nbsp;filter: blur(10px); <br />
 }`;
 }
+
+function showDistantShadow(){
+   removeShadowClasses(boxy);
+   boxy.classList.add('distant-shadow');
+   output.innerHTML = 'box-shadow: 100px 100px 40px rgba(0, 0, 0, 0.2)';
+}
+
